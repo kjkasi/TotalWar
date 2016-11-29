@@ -54,4 +54,10 @@ object DataModule1: TDataModule1
     Left = 120
     Top = 120
   end
+  object BuyUnit: TADOQuery
+    Connection = TotalWar
+    Parameters = <>
+    Left = 176
+    Top = 64
+  end
 end

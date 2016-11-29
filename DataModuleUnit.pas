@@ -14,6 +14,7 @@ type
     dsInfo: TDataSource;
     Tavern: TADOTable;
     dsTavern: TDataSource;
+    BuyUnit: TADOQuery;
   private
     { Private declarations }
   public

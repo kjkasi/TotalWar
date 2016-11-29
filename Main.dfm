@@ -54,4 +54,13 @@ object Form1: TForm1
     TitleFont.Name = 'MS Sans Serif'
     TitleFont.Style = []
   end
+  object Button1: TButton
+    Left = 784
+    Top = 160
+    Width = 75
+    Height = 25
+    Caption = 'Buy'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
 end

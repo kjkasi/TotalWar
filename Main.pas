@@ -12,6 +12,8 @@ type
     DBText1: TDBText;
     Label1: TLabel;
     DBGrid2: TDBGrid;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,5 +28,16 @@ implementation
 uses DataModuleUnit;
 
 {$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  DataModule1.BuyUnit.SQL.Clear ();
+  DataModule1.BuyUnit.SQL.Append ('EXECUTE BuyUnit ' + DataModule1.Tavern.FieldByName ('ID').AsString);
+  DataModule1.BuyUnit.ExecSQL ();
+
+  DataModule1.Units.Requery ();
+  DataModule1.Tavern.Requery ();
+  DataModule1.Info.Requery ();
+end;
 
 end.
