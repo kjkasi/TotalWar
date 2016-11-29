@@ -26,6 +26,7 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -137,6 +138,14 @@ begin
   DataModule1.Units.Requery ();
   DataModule1.Enemies.Requery ();
 
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  DataModule1.Units.Active := true;
+  DataModule1.Tavern.Active := true;
+  DataModule1.Info.Active := true;
+  DataModule1.Enemies.Active := true;
 end;
 
 end.
