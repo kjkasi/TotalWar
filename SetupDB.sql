@@ -10,6 +10,48 @@ CREATE TABLE Units
 	Name varchar(50) NOT NULL,
 	Attack int NOT NULL,
 	Defence int NOT NULL,
-	Health  int NOT NULL
+	Health  int NOT NULL,
 )
 GO
+
+ALTER TABLE Units ADD
+	CONSTRAINT PK_Units PRIMARY KEY(ID)
+GO
+
+CREATE TABLE Players
+(
+	ID int NOT NULL IDENTITY,
+	Name varchar(50) NOT NULL,
+)
+GO
+
+ALTER TABLE Players ADD
+	CONSTRAINT PK_Players PRIMARY KEY(ID)
+GO
+
+INSERT Players
+(Name)
+VALUES
+('test1'),
+('test2');
+GO
+
+ALTER TABLE Units
+	ALTER COLUMN
+	PlayerID int NOT NULL
+GO
+
+ALTER TABLE Units ADD
+	CONSTRAINT FK_Units_Players FOREIGN KEY(PlayerID)
+	REFERENCES Players(ID)
+GO
+
+INSERT Units
+(Name, Attack, Defence, Health, PlayerID)
+VALUES
+('Unit1', 10, 10, 100, 1),
+('Unit2', 10, 10, 100, 1),
+('Unit3', 10, 10, 100, 2),
+('Unit4', 10, 10, 100, 2);
+GO
+
