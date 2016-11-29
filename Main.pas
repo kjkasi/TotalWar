@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, DBCtrls;
+  Dialogs, Grids, DBGrids, StdCtrls, DBCtrls, Buttons;
 
 type
   TForm1 = class(TForm)
@@ -13,7 +13,16 @@ type
     Label1: TLabel;
     DBGrid2: TDBGrid;
     Button1: TButton;
+    GroupBox1: TGroupBox;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
     procedure Button1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +47,53 @@ begin
   DataModule1.Units.Requery ();
   DataModule1.Tavern.Requery ();
   DataModule1.Info.Requery ();
+end;
+
+procedure TForm1.SpeedButton2Click(Sender: TObject);
+begin
+  DataModule1.Move.SQL.Clear ();
+  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
+    DataModule1.Units.FieldByName ('ID').AsString + ', W');
+  DataModule1.Move.ExecSQL ();
+
+  DataModule1.Units.Requery ();
+
+end;
+
+procedure TForm1.SpeedButton1Click(Sender: TObject);
+begin
+
+  DataModule1.Move.SQL.Clear ();
+  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
+    DataModule1.Units.FieldByName ('ID').AsString + ', N');
+  DataModule1.Move.ExecSQL ();
+
+  DataModule1.Units.Requery ();
+
+end;
+
+procedure TForm1.SpeedButton4Click(Sender: TObject);
+begin
+
+  DataModule1.Move.SQL.Clear ();
+  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
+    DataModule1.Units.FieldByName ('ID').AsString + ', E');
+  DataModule1.Move.ExecSQL ();
+
+  DataModule1.Units.Requery ();
+
+end;
+
+procedure TForm1.SpeedButton3Click(Sender: TObject);
+begin
+
+  DataModule1.Move.SQL.Clear ();
+  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
+    DataModule1.Units.FieldByName ('ID').AsString + ', S');
+  DataModule1.Move.ExecSQL ();
+
+  DataModule1.Units.Requery ();
+
 end;
 
 end.

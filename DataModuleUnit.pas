@@ -15,6 +15,7 @@ type
     Tavern: TADOTable;
     dsTavern: TDataSource;
     BuyUnit: TADOQuery;
+    Move: TADOQuery;
   private
     { Private declarations }
   public

@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 223
-  Top = 145
+  Left = 262
+  Top = 112
   Width = 870
   Height = 500
   Caption = 'Form1'
@@ -62,5 +62,45 @@ object Form1: TForm1
     Caption = 'Buy'
     TabOrder = 2
     OnClick = Button1Click
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 136
+    Width = 185
+    Height = 105
+    Caption = 'GroupBox1'
+    TabOrder = 3
+    object SpeedButton1: TSpeedButton
+      Left = 32
+      Top = 16
+      Width = 23
+      Height = 22
+      Caption = 'N'
+      OnClick = SpeedButton1Click
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 8
+      Top = 40
+      Width = 23
+      Height = 22
+      Caption = 'W'
+      OnClick = SpeedButton2Click
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 32
+      Top = 64
+      Width = 23
+      Height = 22
+      Caption = 'S'
+      OnClick = SpeedButton3Click
+    end
+    object SpeedButton4: TSpeedButton
+      Left = 56
+      Top = 40
+      Width = 23
+      Height = 22
+      Caption = 'E'
+      OnClick = SpeedButton4Click
+    end
   end
 end

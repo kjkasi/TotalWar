@@ -83,3 +83,11 @@ ALTER TABLE Tavern
 ADD Quantity int NOT NULL DEFAULT(10)
 GO
 
+ALTER TABLE Units
+ADD X int, Y int 
+GO
+
+SELECT *
+FROM MyUnits
+GO
+
