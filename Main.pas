@@ -142,7 +142,7 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  DataModule1.Units.Active := true;
+  DataModule1.Units.Active := true;                    
   DataModule1.Tavern.Active := true;
   DataModule1.Info.Active := true;
   DataModule1.Enemies.Active := true;
