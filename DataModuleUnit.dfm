@@ -55,12 +55,6 @@ object DataModule1: TDataModule1
     Left = 120
     Top = 120
   end
-  object BuyUnit: TADOQuery
-    Connection = TotalWar
-    Parameters = <>
-    Left = 176
-    Top = 64
-  end
   object Move: TADOQuery
     Connection = TotalWar
     Parameters = <>
@@ -83,6 +77,13 @@ object DataModule1: TDataModule1
     ProcedureName = 'Move;1'
     Parameters = <>
     Left = 336
+    Top = 64
+  end
+  object BuyUnit: TADOStoredProc
+    Connection = TotalWar
+    ProcedureName = 'BuyUnit;1'
+    Parameters = <>
+    Left = 176
     Top = 64
   end
 end

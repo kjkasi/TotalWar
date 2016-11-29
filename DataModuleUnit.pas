@@ -14,11 +14,11 @@ type
     dsInfo: TDataSource;
     Tavern: TADOTable;
     dsTavern: TDataSource;
-    BuyUnit: TADOQuery;
     Move: TADOQuery;
     dsEnemies: TDataSource;
     Enemies: TADOQuery;
     MoveUnit: TADOStoredProc;
+    BuyUnit: TADOStoredProc;
     procedure UnitsAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }

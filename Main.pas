@@ -42,10 +42,17 @@ uses DataModuleUnit;
 {$R *.dfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
+var
+  UnitID : Integer;
 begin
+{
   DataModule1.BuyUnit.SQL.Clear ();
   DataModule1.BuyUnit.SQL.Append ('EXECUTE BuyUnit ' + DataModule1.Tavern.FieldByName ('ID').AsString);
   DataModule1.BuyUnit.ExecSQL ();
+}
+  UnitID := DataModule1.Tavern.FieldByName ('ID').Value;
+  DataModule1.BuyUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
+  DataModule1.BuyUnit.ExecProc ();
 
   DataModule1.Units.Requery ();
   DataModule1.Tavern.Requery ();
