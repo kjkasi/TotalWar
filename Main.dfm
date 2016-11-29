@@ -102,6 +102,14 @@ object Form1: TForm1
       Caption = 'E'
       OnClick = SpeedButton4Click
     end
+    object SpeedButton5: TSpeedButton
+      Left = 152
+      Top = 16
+      Width = 23
+      Height = 22
+      Caption = 'A'
+      OnClick = SpeedButton5Click
+    end
   end
   object DBGrid3: TDBGrid
     Left = 8

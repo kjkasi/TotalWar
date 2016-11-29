@@ -19,11 +19,13 @@ type
     SpeedButton3: TSpeedButton;
     SpeedButton4: TSpeedButton;
     DBGrid3: TDBGrid;
+    SpeedButton5: TSpeedButton;
     procedure Button1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -94,6 +96,35 @@ begin
   DataModule1.Move.ExecSQL ();
 
   DataModule1.Units.Requery ();
+
+end;
+
+procedure TForm1.SpeedButton5Click(Sender: TObject);
+var
+  UnitID, MyX, MyY, EnemyX, EnemyY : Integer;
+  Direction : char;
+begin
+
+  UnitID := DataModule1.Units.FieldByName ('ID').Value;
+
+  MyX := DataModule1.Units.FieldByName ('X').Value;
+  MyY := DataModule1.Units.FieldByName ('Y').Value;
+
+  EnemyX := DataModule1.Enemies.FieldByName ('X').Value;
+  EnemyY := DataModule1.Enemies.FieldByName ('Y').Value;
+
+  if EnemyY > MyY then Direction := 'N';
+  if EnemyY < MyY then Direction := 'S';
+  if EnemyX > MyX then Direction := 'E';
+  if EnemyX < MyX then Direction := 'W';
+
+  DataModule1.Move.SQL.Clear ();
+  DataModule1.Move.SQL.Append ('Execute Move ' +
+    IntToStr (UnitID) + ', ' +  Direction);
+  DataModule1.Move.ExecSQL ();
+
+  DataModule1.Units.Requery ();
+  DataModule1.Enemies.Requery ();
 
 end;
 
