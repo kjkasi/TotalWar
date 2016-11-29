@@ -41,4 +41,17 @@ object Form1: TForm1
     TitleFont.Name = 'MS Sans Serif'
     TitleFont.Style = []
   end
+  object DBGrid2: TDBGrid
+    Left = 536
+    Top = 32
+    Width = 320
+    Height = 120
+    DataSource = DataModule1.dsTavern
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
 end

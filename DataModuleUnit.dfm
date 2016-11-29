@@ -18,13 +18,13 @@ object DataModule1: TDataModule1
     CursorType = ctStatic
     TableDirect = True
     TableName = 'MyUnits'
-    Left = 64
-    Top = 8
+    Left = 8
+    Top = 64
   end
   object dsUnits: TDataSource
     DataSet = Units
-    Left = 120
-    Top = 8
+    Left = 8
+    Top = 120
   end
   object Info: TADOTable
     Active = True
@@ -37,7 +37,21 @@ object DataModule1: TDataModule1
   end
   object dsInfo: TDataSource
     DataSet = Info
+    Left = 64
+    Top = 120
+  end
+  object Tavern: TADOTable
+    Active = True
+    Connection = TotalWar
+    CursorType = ctStatic
+    TableDirect = True
+    TableName = 'MyTavern'
     Left = 120
     Top = 64
+  end
+  object dsTavern: TDataSource
+    DataSet = Tavern
+    Left = 120
+    Top = 120
   end
 end

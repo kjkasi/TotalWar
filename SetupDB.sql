@@ -59,3 +59,27 @@ ALTER TABLE Players
 ADD Balance money NOT NULL DEFAULT(100)
 GO
 
+CREATE TABLE Tavern
+(
+	ID int NOT NULL IDENTITY,
+	Name varchar(50) NOT NULL,
+	Price money NOT NULL,
+	Attack int NOT NULL,
+	Defence int NOT NULL,
+	Health int NOT NULL
+)
+GO
+
+INSERT Tavern
+(Name, Price, Attack, Defence, Health)
+VALUES
+('Cat', 50, 10, 10, 100),
+('Dog', 50, 10, 10, 100),
+('Cow', 50, 10, 10, 100),
+('Sheep', 50, 10, 10, 100);
+GO
+
+ALTER TABLE Tavern
+ADD Quantity int NOT NULL DEFAULT(10)
+GO
+

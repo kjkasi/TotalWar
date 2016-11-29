@@ -12,6 +12,8 @@ type
     dsUnits: TDataSource;
     Info: TADOTable;
     dsInfo: TDataSource;
+    Tavern: TADOTable;
+    dsTavern: TDataSource;
   private
     { Private declarations }
   public

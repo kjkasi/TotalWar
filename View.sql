@@ -26,3 +26,14 @@ GO
 SELECT *
 FROM MyInfo
 GO
+
+
+CREATE VIEW MyTavern
+	AS
+		SELECT *
+		FROM Tavern
+		WHERE Price <= (
+						SELECT Balance
+						FROM Players
+						WHERE Name = CURRENT_USER
+						)

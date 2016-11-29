@@ -11,6 +11,7 @@ type
     DBGrid1: TDBGrid;
     DBText1: TDBText;
     Label1: TLabel;
+    DBGrid2: TDBGrid;
   private
     { Private declarations }
   public
