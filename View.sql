@@ -15,3 +15,14 @@ GO
 SELECT *
 FROM MyUnits
 GO
+
+CREATE VIEW MyInfo
+	AS
+		SELECT *
+		FROM Players
+		WHERE Name = CURRENT_USER
+GO
+
+SELECT *
+FROM MyInfo
+GO

@@ -10,6 +10,8 @@ type
     TotalWar: TADOConnection;
     Units: TADOTable;
     dsUnits: TDataSource;
+    Info: TADOTable;
+    dsInfo: TDataSource;
   private
     { Private declarations }
   public

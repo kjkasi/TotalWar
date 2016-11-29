@@ -4,11 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids;
+  Dialogs, Grids, DBGrids, StdCtrls, DBCtrls;
 
 type
   TForm1 = class(TForm)
     DBGrid1: TDBGrid;
+    DBText1: TDBText;
+    Label1: TLabel;
   private
     { Private declarations }
   public

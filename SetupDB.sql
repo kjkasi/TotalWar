@@ -55,3 +55,7 @@ VALUES
 ('Unit4', 10, 10, 100, 2);
 GO
 
+ALTER TABLE Players
+ADD Balance money NOT NULL DEFAULT(100)
+GO
+

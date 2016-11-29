@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
-  Left = 209
-  Top = 612
-  Height = 150
+  Left = 230
+  Top = 477
+  Height = 284
   Width = 890
   object TotalWar: TADOConnection
     Connected = True
@@ -25,5 +25,19 @@ object DataModule1: TDataModule1
     DataSet = Units
     Left = 120
     Top = 8
+  end
+  object Info: TADOTable
+    Active = True
+    Connection = TotalWar
+    CursorType = ctStatic
+    TableDirect = True
+    TableName = 'MyInfo'
+    Left = 64
+    Top = 64
+  end
+  object dsInfo: TDataSource
+    DataSet = Info
+    Left = 120
+    Top = 64
   end
 end
