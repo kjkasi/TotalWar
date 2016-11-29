@@ -11,3 +11,7 @@ CREATE VIEW MyUnits
 							WHERE Name = CURRENT_USER
 							)
 GO
+
+SELECT *
+FROM MyUnits
+GO

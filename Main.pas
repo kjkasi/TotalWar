@@ -4,10 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, Grids, DBGrids;
 
 type
   TForm1 = class(TForm)
+    DBGrid1: TDBGrid;
   private
     { Private declarations }
   public
@@ -18,6 +19,8 @@ var
   Form1: TForm1;
 
 implementation
+
+uses DataModuleUnit;
 
 {$R *.dfm}
 
