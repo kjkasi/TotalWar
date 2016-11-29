@@ -16,6 +16,7 @@ object DataModule1: TDataModule1
     Active = True
     Connection = TotalWar
     CursorType = ctStatic
+    AfterScroll = UnitsAfterScroll
     TableDirect = True
     TableName = 'MyUnits'
     Left = 8
@@ -64,6 +65,17 @@ object DataModule1: TDataModule1
     Connection = TotalWar
     Parameters = <>
     Left = 232
+    Top = 64
+  end
+  object dsEnemies: TDataSource
+    DataSet = Enemies
+    Left = 280
+    Top = 120
+  end
+  object Enemies: TADOQuery
+    Connection = TotalWar
+    Parameters = <>
+    Left = 280
     Top = 64
   end
 end

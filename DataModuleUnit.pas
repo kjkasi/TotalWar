@@ -16,6 +16,9 @@ type
     dsTavern: TDataSource;
     BuyUnit: TADOQuery;
     Move: TADOQuery;
+    dsEnemies: TDataSource;
+    Enemies: TADOQuery;
+    procedure UnitsAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -28,5 +31,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TDataModule1.UnitsAfterScroll(DataSet: TDataSet);
+begin
+  DataModule1.Enemies.Close ();
+  DataModule1.Enemies.SQL.Clear ();
+  DataModule1.Enemies.SQL.Append ('SELECT * FROM ListEnemes (' +
+    DataModule1.Units.FieldByName ('ID').AsString + ')');
+  DataModule1.Enemies.Open ();
+
+end;
 
 end.

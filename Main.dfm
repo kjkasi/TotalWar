@@ -103,4 +103,17 @@ object Form1: TForm1
       OnClick = SpeedButton4Click
     end
   end
+  object DBGrid3: TDBGrid
+    Left = 8
+    Top = 248
+    Width = 320
+    Height = 120
+    DataSource = DataModule1.dsEnemies
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
 end
