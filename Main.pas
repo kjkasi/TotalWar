@@ -45,11 +45,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
   UnitID : Integer;
 begin
-{
-  DataModule1.BuyUnit.SQL.Clear ();
-  DataModule1.BuyUnit.SQL.Append ('EXECUTE BuyUnit ' + DataModule1.Tavern.FieldByName ('ID').AsString);
-  DataModule1.BuyUnit.ExecSQL ();
-}
+
   UnitID := DataModule1.Tavern.FieldByName ('ID').Value;
   DataModule1.BuyUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
   DataModule1.BuyUnit.ExecProc ();
@@ -60,47 +56,56 @@ begin
 end;
 
 procedure TForm1.SpeedButton2Click(Sender: TObject);
+var
+  UnitID : Integer;
 begin
-  DataModule1.Move.SQL.Clear ();
-  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
-    DataModule1.Units.FieldByName ('ID').AsString + ', W');
-  DataModule1.Move.ExecSQL ();
+
+  UnitID := DataModule1.Units.FieldByName ('ID').Value;
+  DataModule1.MoveUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
+  DataModule1.MoveUnit.Parameters.ParamByName('@Direction').Value := 'W';
+  DataModule1.MoveUnit.ExecProc ();
 
   DataModule1.Units.Requery ();
 
 end;
 
 procedure TForm1.SpeedButton1Click(Sender: TObject);
+var
+  UnitID : Integer;
 begin
 
-  DataModule1.Move.SQL.Clear ();
-  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
-    DataModule1.Units.FieldByName ('ID').AsString + ', N');
-  DataModule1.Move.ExecSQL ();
+  UnitID := DataModule1.Units.FieldByName ('ID').Value;
+  DataModule1.MoveUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
+  DataModule1.MoveUnit.Parameters.ParamByName('@Direction').Value := 'N';
+  DataModule1.MoveUnit.ExecProc ();
 
   DataModule1.Units.Requery ();
 
 end;
 
 procedure TForm1.SpeedButton4Click(Sender: TObject);
+var
+  UnitID : Integer;
 begin
 
-  DataModule1.Move.SQL.Clear ();
-  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
-    DataModule1.Units.FieldByName ('ID').AsString + ', E');
-  DataModule1.Move.ExecSQL ();
+  UnitID := DataModule1.Units.FieldByName ('ID').Value;
+  DataModule1.MoveUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
+  DataModule1.MoveUnit.Parameters.ParamByName('@Direction').Value := 'E';
+  DataModule1.MoveUnit.ExecProc ();
 
   DataModule1.Units.Requery ();
 
 end;
 
 procedure TForm1.SpeedButton3Click(Sender: TObject);
+var
+  UnitID : Integer;
 begin
 
-  DataModule1.Move.SQL.Clear ();
-  DataModule1.Move.SQL.Append ('EXECUTE Move ' +
-    DataModule1.Units.FieldByName ('ID').AsString + ', S');
-  DataModule1.Move.ExecSQL ();
+  UnitID := DataModule1.Units.FieldByName ('ID').Value;
+  DataModule1.MoveUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
+  DataModule1.MoveUnit.Parameters.ParamByName('@Direction').Value := 'S';
+  DataModule1.MoveUnit.ExecProc ();
 
   DataModule1.Units.Requery ();
 
@@ -124,12 +129,7 @@ begin
   if EnemyY < MyY then Direction := 'S';
   if EnemyX > MyX then Direction := 'E';
   if EnemyX < MyX then Direction := 'W';
-{
-  DataModule1.Move.SQL.Clear ();
-  DataModule1.Move.SQL.Append ('Execute Move ' +
-    IntToStr (UnitID) + ', ' +  Direction);
-  DataModule1.Move.ExecSQL ();
-}
+
   DataModule1.MoveUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
   DataModule1.MoveUnit.Parameters.ParamByName('@Direction').Value := Direction;
   DataModule1.MoveUnit.ExecProc ();

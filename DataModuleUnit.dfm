@@ -82,7 +82,19 @@ object DataModule1: TDataModule1
   object BuyUnit: TADOStoredProc
     Connection = TotalWar
     ProcedureName = 'BuyUnit;1'
-    Parameters = <>
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+      end
+      item
+        Name = '@UnitID'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+      end>
     Left = 176
     Top = 64
   end
