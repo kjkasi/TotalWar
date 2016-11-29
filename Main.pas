@@ -117,11 +117,15 @@ begin
   if EnemyY < MyY then Direction := 'S';
   if EnemyX > MyX then Direction := 'E';
   if EnemyX < MyX then Direction := 'W';
-
+{
   DataModule1.Move.SQL.Clear ();
   DataModule1.Move.SQL.Append ('Execute Move ' +
     IntToStr (UnitID) + ', ' +  Direction);
   DataModule1.Move.ExecSQL ();
+}
+  DataModule1.MoveUnit.Parameters.ParamByName('@UnitID').Value := UnitID;
+  DataModule1.MoveUnit.Parameters.ParamByName('@Direction').Value := Direction;
+  DataModule1.MoveUnit.ExecProc ();
 
   DataModule1.Units.Requery ();
   DataModule1.Enemies.Requery ();

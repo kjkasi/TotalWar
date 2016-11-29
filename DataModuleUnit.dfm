@@ -78,4 +78,11 @@ object DataModule1: TDataModule1
     Left = 280
     Top = 64
   end
+  object MoveUnit: TADOStoredProc
+    Connection = TotalWar
+    ProcedureName = 'Move;1'
+    Parameters = <>
+    Left = 336
+    Top = 64
+  end
 end

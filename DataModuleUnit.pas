@@ -18,6 +18,7 @@ type
     Move: TADOQuery;
     dsEnemies: TDataSource;
     Enemies: TADOQuery;
+    MoveUnit: TADOStoredProc;
     procedure UnitsAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
