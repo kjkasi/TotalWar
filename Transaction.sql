@@ -1,11 +1,15 @@
 SET XACT_ABORT ON
 
 BEGIN TRANSACTION
-	UPDATE	Accounts
+	UPDATE	Players
 	SET		Balance = Balance - 1
 	WHERE	ID = 1
 	
-	UPDATE	Accounts
+	UPDATE	Players
 	SET		Balance = Balance + 1 / 0
 	WHERE	ID = 2
 COMMIT TRANSACTION
+
+GO
+
+SELECT * FROM Players
